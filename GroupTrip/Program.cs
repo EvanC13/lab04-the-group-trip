@@ -32,8 +32,6 @@ double pricePerGallon = Convert.ToDouble(Console.ReadLine());
 double fuelCost = FuelCost(miles, milesPerGallon, pricePerGallon);
 
 
-//People Going is gone, account for this
-
 System.Console.Write("How many pizzas? ");
 double numberOfPizzas = Convert.ToDouble(Console.ReadLine());
 
@@ -57,11 +55,13 @@ System.Console.WriteLine("");
 
 
 
-//Part 2
+//Part 2 Calculations
 
 double slicesEach = pizzaSlices / names.Length;
 double costPerPerson = tripTotal / names.Length;
 
+
+//Part 2 Output
 System.Console.WriteLine("");
 System.Console.WriteLine("=== Part 2: The Group ===");
 
@@ -70,7 +70,7 @@ System.Console.WriteLine("Slices each: " + slicesEach);
 System.Console.WriteLine("Cost per person: " + costPerPerson);
 
 
-//Part 3
+//Part 3 Formatting and variable defining
 System.Console.WriteLine("");
 System.Console.WriteLine("=== Part 3: Who Works How Long ===");
 
@@ -78,6 +78,8 @@ double totalHours = 0;
 double totalHomed = 0;
 double longest = 0;
 
+
+//Part 3 For Loop that spits output
 for (int i = 0; i < names.Length; i++)
 {
     double takeHomePay = TakeHomePay(hoursWorked[i], hourlyRates[i], taxRate);
@@ -91,10 +93,14 @@ for (int i = 0; i < names.Length; i++)
     System.Console.WriteLine(names[i] + ": takes home " + takeHomePay.ToString("C") + " for " + hoursWorked[i] + " hours, " + takeHomePerHour.ToString("C") + " per hour, must work " + hoursNeeded.ToString("F2") + " hours");
 
 }
+
+//Final outputs
 System.Console.WriteLine("Total hours worked: " + totalHours.ToString("F0"));
 System.Console.WriteLine("Total take home pay: " + totalHomed.ToString("C"));
 System.Console.WriteLine("Longest anyone must work: " + longest.ToString("F2"));
 
+
+//Methods used
 
 static double FuelCost(double miles, double milesPerGallon, double priceperGallon)
 {
